@@ -1,0 +1,157 @@
+@import 'var';
+.cpwrapper {
+  position: relative;
+  margin-bottom: $commonMargin;
+  .customSelectInput__control,
+  input.form-control,
+  textarea.form-control {
+    border-radius: 2px;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+  }
+  input.form-control.is-invalid,
+  textarea.form-control.is-invalid {
+    border-color: #dc3545 !important;
+  }
+  input.form-control,
+  textarea.form-control {
+    padding: 10px 15px;
+    font-family: Arial, sans-serif;
+    line-height: normal;
+    &::-ms-clear {
+      display: none;
+    }
+  }
+  .cp-required-sign {
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    z-index: 1;
+  }
+  .cp-hint,
+  .cp-counter {
+    font-size: 13px !important;
+    color: #6c757d !important;
+    opacity: 0.7 !important;
+  }
+  .cp-hint {
+    margin-top: $commonMargin !important;
+  }
+  .cp-counter {
+    font-size: 10.5px !important;
+    margin-top: $commonMargin !important;
+    margin-bottom: 0 !important;
+  }
+  .cp-invalid-msg {
+    margin-top: $commonMargin !important;
+    font-size: 12px !important;
+  }
+  .text-danger {
+    color: #dc3545 !important;
+  }
+  .cp-search__control {
+    border-radius: 2px;
+    background-color: #fff !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+  }
+  .cp-search__multi-value {
+    border: 1px solid #ddd !important;
+    background-color: #f8f8f8 !important;
+  }
+  .cp-search__placeholder {
+    font-family: Arial, sans-serif;
+  }
+  .cp-search__multi-value__label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  /* modal dialog
+	*/
+  .modal {
+    .modal-dialog > .modal-content {
+      border-radius: 1px !important;
+    }
+    .modal-header {
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
+      padding-left: 25px !important;
+      padding-right: 25px !important;
+    }
+    .modal-header > .modal-title {
+      font-size: 1.375rem;
+      font-weight: 300;
+    }
+    .modal-header > .modal-title > .material-icons {
+      vertical-align: middle;
+    }
+    .modal-body {
+      box-shadow: none !important;
+      padding: 25px !important;
+      white-space: normal !important;
+      padding-bottom: 0 !important;
+      font-size: 14px;
+    }
+    .modal-footer {
+      border-top: none !important;
+      box-shadow: none !important;
+      margin-top: 0 !important;
+      padding: 10px 25px !important;
+    }
+    .modal-footer .btn-primary {
+      background-color: $primaryColor;
+      border-color: $primaryColor;
+      color: $white;
+    }
+    .modal-footer .btn {
+      text-transform: uppercase;
+      margin: 0 0 0 5px;
+      padding: 6px 17px;
+      border: 1px solid #f0f0f0;
+      line-height: 21px;
+      text-shadow: none;
+      box-shadow: none;
+      position: relative;
+      vertical-align: middle;
+      border-radius: 2px;
+      font-size: 14px;
+    }
+    @media (min-width: 768px) {
+      .modal-dialog {
+        width: 600px;
+      }
+    }
+    @media (max-width: 768px) {
+      .modal-lg,
+      .modal-xl,
+      .modal-md,
+      .modal-lg > .modal-content,
+      .modal-xl > .modal-content,
+      .modal-md > .modal-content {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+input:focus::placeholder {
+  color: #6c757d !important;
+}
+
+.isInputGroupClass {
+  flex: 1 1 auto;
+  width: 1%;
+} /* I seperate this class because it only does one thing */
+
+/* locale
+*/
+.cp-locale-jp {
+	.cp-required-sign {
+		font-size: 9px;
+		top: 0;
+		left: 3px;
+	}
+}
