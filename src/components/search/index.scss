@@ -1,0 +1,25 @@
+@import '../../assets/styles/var';
+@import url('https://use.fontawesome.com/releases/v5.13.0/css/all.css');
+
+.searchClass {
+  font-size: inherit;
+  &.is-invalid .cp-search__control {
+    border-color: #dc3545 !important;
+  }
+  &.is-invalid .cp-search__control {
+    background-image: $invalidIcon;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+    border-color: #dc3545 !important;
+    -webkit-transition: none;
+    transition: none;
+  }
+  &.is-invalid.has-remove-btn .cp-search__control {
+    background-position: right 30px center;
+  }
+}
+.cp-search__menu-list {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}

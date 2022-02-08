@@ -1,0 +1,431 @@
+$commonMargin: 5px;
+$primaryColor: #ff5722;
+$white: #ffffff;
+/*
+clear button
+*/
+.clearBtn {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  padding: 0px 6px 0px 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+.clearBtn::after {
+  vertical-align: text-top;
+  background-color: transparent;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  padding: 2px;
+  line-height: 1;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  content: '\00d7';
+}
+/*
+act as placeholder in range inputs
+*/
+.dateRangePh {
+  position: absolute;
+  left: 15px;
+  color: #6c757d !important;
+}
+/*
+Styling ReactDateTimePicker Components
+*/
+.rdtPicker {
+  padding: 0;
+  border: 1px solid #aeaeae;
+  border-radius: 4.8px;
+  td,
+  th {
+    border: 0;
+  }
+  td:hover {
+    border-radius: 3px;
+  }
+
+  table {
+    border-collapse: initial;
+  }
+  tbody {
+    padding: 0.4rem;
+
+    td.rdtDay:hover {
+      background: #216ba5 !important;
+      color: #fff;
+    }
+    td {
+      font-size: 14px;
+      :focus-within {
+        border: 3px solid #000;
+      }
+    }
+  }
+
+  .rdtBtn {
+    color: #ccc;
+  }
+  .rdtToday::before {
+    content: none !important;
+  }
+  .rdtActive {
+    border-radius: 0.3rem;
+    background-color: #216ba5 !important;
+    color: #fff;
+  }
+}
+/* common style for picker
+*/
+.timePickerClass,
+.timeRangePickerClass,
+.datePickerClass,
+.dateRangePickerClass,
+.dateTimePickerClass,
+.dateTimeRangePickerClass {
+  &.is-invalid.has-remove-btn,
+  .is-invalid.has-remove-btn {
+    background-position: right calc(25px) center;
+  }
+}
+/*
+Main Time Picker Component
+*/
+.timePickerClass {
+  font-size: inherit;
+}
+/*
+Main Time Range Picker Component
+*/
+.timeRangePickerClass {
+  cursor: text;
+  position: relative;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 0;
+  .rdt {
+    flex: 1 1 auto;
+  }
+  .rdt:first-child {
+    flex: none;
+  }
+  input {
+    border: none !important;
+    background: transparent !important;
+  }
+  input:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+  }
+  .time-range-input {
+    display: block;
+    height: calc(1.5em + 0.75rem + 2px);
+    text-align: center !important;
+
+    .range-btn {
+      width: 100%;
+      padding: 0 12px;
+      text-align: left;
+      position: relative !important;
+    }
+
+    .range-btn::after {
+      content: none !important;
+    }
+  }
+  .time-range-input:first-child {
+    text-align: left !important;
+  }
+  button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: 0px 6px 0px 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    :focus {
+      outline: 5px auto #000;
+    }
+  }
+  button::after {
+    vertical-align: text-top;
+    background-color: transparent;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    padding: 2px;
+    line-height: 1;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    content: '\00d7';
+  }
+}
+/*
+Main Date Picker Component
+*/
+.datePickerClass {
+  input:read-only {
+    background: #fff !important;
+  }
+  margin-bottom: $commonMargin;
+  .react-datepicker-wrapper {
+    width: 100%;
+  }
+  button::after {
+    display: inline;
+    vertical-align: text-top;
+    background-color: transparent;
+    font-size: 20px;
+    color: #333;
+  }
+  .react-datepicker__header {
+    background-color: #fff;
+    border-bottom: 0;
+    .react-datepicker__day-name {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+  }
+}
+/*
+Main Date Range Picker Component
+*/
+.dateRangePickerClass {
+  position: relative;
+  cursor: text;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0;
+  align-content: center;
+  .date-range-input {
+    display: block;
+    height: calc(1.5em + 0.75rem + 2px);
+    text-align: center !important;
+    :focus-visible {
+      border: 1px solid black;
+    }
+
+    .range-btn {
+      width: 100%;
+      padding: 0 12px;
+      line-height: 38px !important;
+      text-align: left;
+      position: relative !important;
+    }
+
+    .range-btn::after {
+      content: none !important;
+    }
+  }
+  .date-range-input:first-child {
+    text-align: left !important;
+  }
+  input {
+    border: none !important;
+    background: transparent !important;
+  }
+  input :focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+  }
+  .react-datepicker-wrapper {
+    flex: 1 1 auto;
+  }
+  .react-datepicker-wrapper:first-child {
+    flex: none;
+  }
+  .react-datepicker__header {
+    background-color: #fff;
+    border-bottom: 0;
+    .react-datepicker__day-name {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+  }
+  button:not(.react-datepicker__navigation) {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: 0px 6px 0px 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+
+    :focus {
+      outline: 5px auto #000;
+    }
+  }
+  button:not(.react-datepicker__navigation)::after {
+    vertical-align: text-top;
+    background-color: transparent;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    padding: 2px;
+    line-height: 1;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    content: '\00d7';
+  }
+}
+/*
+Main Date Time Picker Component
+*/
+.dateTimePickerClass {
+  font-size: inherit;
+  button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: 0px 6px 0px 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+
+    :focus {
+      outline: 5px auto #000;
+    }
+  }
+  button::after {
+    vertical-align: text-top;
+    background-color: transparent;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    padding: 2px;
+    line-height: 1;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    content: '\00d7';
+  }
+}
+/*
+Main Date Time Range Picker Component
+*/
+.dateTimeRangePickerClass {
+  position: relative;
+  cursor: text;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0;
+  align-content: center;
+
+  .unselected {
+    color: #ccc;
+    pointer-events: none;
+  }
+
+  .rdt {
+    flex: 1 1 auto;
+  }
+
+  .rdt:first-child {
+    flex: none;
+  }
+  .date-time-range-input {
+    display: block;
+    height: calc(1.5em + 0.75rem + 2px);
+    text-align: center !important;
+
+    .range-btn {
+      width: 100%;
+      padding: 0 12px;
+      text-align: left;
+      position: relative !important;
+    }
+
+    .range-btn::after {
+      content: none !important;
+    }
+  }
+  .date-time-range-input:first-child {
+    text-align: left !important;
+  }
+
+  input {
+    border: none !important;
+    background: transparent !important;
+  }
+  input:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+  }
+
+  button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: 0px 6px 0px 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+
+    :focus {
+      outline: 5px auto #000;
+    }
+  }
+  button::after {
+    vertical-align: text-top;
+    background-color: transparent;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    padding: 2px;
+    line-height: 1;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    content: '\00d7';
+  }
+}
